@@ -1,4 +1,4 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.3
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -26,6 +26,7 @@ let package = Package(
             path: ".",
             exclude: ["rlottie/src/wasm", "rlottie/src/lottie/rapidjson/msinttypes", "rlottie/src/vector/pixman", "rlottie/src/vector/vdrawhelper_neon.cpp"],
             sources: ["rlottie/src", "generate"],
+            resources: [.copy("PrivacyInfo.xcprivacy")],
             publicHeadersPath: "Xcode",
             cSettings: [.headerSearchPath("generate"), .headerSearchPath("rlottie/inc"), .headerSearchPath("rlottie/src/vector"), .headerSearchPath("rlottie/src/vector/freetype")]
         )
